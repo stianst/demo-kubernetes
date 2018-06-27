@@ -1,0 +1,52 @@
+{
+    "realm": "demo",
+    "enabled": true,
+    "users": [
+        {
+            "username": "stian",
+            "enabled": true,
+            "credentials": [
+                {
+                    "type": "password",
+                    "value": "pass"
+                }
+            ],
+            "realmRoles": [
+                "user"
+            ],
+            "clientRoles": {
+                "account": [
+                    "manage-account"
+                ]
+            }
+        }
+    ],
+    "roles": {
+        "realm": [
+            {
+                "name": "user",
+                "description": "User privileges"
+            },
+            {
+                "name": "admin",
+                "description": "Administrator privileges"
+            }
+        ]
+    },
+    "defaultRoles": [
+        "user"
+    ],
+    "clients": [
+        {
+            "clientId": "app",
+            "enabled": true,
+            "publicClient": true,
+            "redirectUris": [
+                "*"
+            ],
+            "webOrigins": [
+                "+"
+            ]
+        }
+    ]
+}

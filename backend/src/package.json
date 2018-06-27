@@ -1,0 +1,14 @@
+{
+  "name": "service-nodejs",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "keycloak-connect": "4.0.0-beta.3",
+    "body-parser": "^1.13.3",
+    "express": "^4.13.3",
+    "express-session": "^1.14.2",
+    "cors": "^2.8.1"
+  }
+}

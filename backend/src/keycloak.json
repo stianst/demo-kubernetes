@@ -1,0 +1,7 @@
+{
+  "realm": "demo",
+  "bearer-only": true,
+  "auth-server-url": "${env.KEYCLOAK_URL}",
+  "ssl-required": "external",
+  "resource": "service-nodejs"
+}
