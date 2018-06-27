@@ -18,7 +18,7 @@ The following URLs uses nip.io to prevent having to modify `/etc/hosts`.
     cat keycloak/keycloak-ingress.yaml | sed "s/KEYCLOAK_HOST/$KEYCLOAK_HOST/" \
     | kubectl create -f -
 
-    xdg-open https://$KEYCLOAK_HOST
+    echo https://$KEYCLOAK_HOST
 
 The Keycloak admin console should now be opened in your browser. Ignore the warning caused by the self-signed certificate. Login with admin/admin. Create a new realm and import `keycloak/realm.json`.
 
@@ -35,7 +35,7 @@ The client config for the frontend allows any redirect-uri and web-origin. This 
     cat backend/backend-ingress.yaml | sed "s/BACKEND_HOST/$BACKEND_HOST/" | \
     kubectl create -f -
 
-    xdg-open https://$BACKEND_HOST/public
+    echo https://$BACKEND_HOST/public
 
 ## Frontend
 
@@ -49,6 +49,6 @@ The client config for the frontend allows any redirect-uri and web-origin. This 
     cat frontend/frontend-ingress.yaml | sed "s/FRONTEND_HOST/$FRONTEND_HOST/" | \
     kubectl create -f - 
 
-    xdg-open https://$FRONTEND_HOST
+    echo https://$FRONTEND_HOST
 
 The frontend application should now be opened in your browser. Login with stian/pass. You should be able to invoke public and invoke secured, but not invoke admin. To be able to invoke admin go back to the Keycloak admin console and add the `admin` role to the user `stian`.
