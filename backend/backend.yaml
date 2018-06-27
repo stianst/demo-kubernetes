@@ -34,7 +34,7 @@ spec:
         imagePullPolicy: Never
         env:
         - name: KEYCLOAK_URL
-          value: "TBD"
+          value: https://KEYCLOAK_HOST/auth
         ports:
         - name: http
           containerPort: 8080

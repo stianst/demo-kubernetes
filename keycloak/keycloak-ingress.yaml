@@ -3,11 +3,14 @@ kind: Ingress
 metadata:
   name: keycloak
 spec:
+  tls:
+    - hosts:
+      - KEYCLOAK_HOST
   rules:
-  - http:
+  - host: KEYCLOAK_HOST
+    http:
       paths:
-      - path: /auth
-        backend:
+      - backend:
           serviceName: keycloak
           servicePort: 8080
 

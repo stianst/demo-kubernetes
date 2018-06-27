@@ -2,14 +2,15 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: backend
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  tls:
+    - hosts:
+      - BACKEND_HOST
   rules:
-  - http:
+  - host: BACKEND_HOST
+    http:
       paths:
-      - path: /backend/
-        backend:
+      - backend:
           serviceName: backend
           servicePort: 8080
 
